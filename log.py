@@ -36,7 +36,8 @@ def get_1perc_error():
     c = db.cursor()
     c.execute("select totdt, badcnt * 1.0 / count as errors "
               "from dailylogcnt, badsrch "
-              "where srchbaddt = totdt and badcnt > count * 0.01 order by totdt limit 10")
+              "where srchbaddt = totdt and badcnt > count * 0.01 "
+              "order by totdt limit 10")
     errors = c.fetchall()
     db.close
     return errors
@@ -48,7 +49,8 @@ articles = get_pop_three()
 print("{:40s} {:s}".format("Title", "Views"))
 print("{:-<40} {:-<7}".format("", ""))
 for article in articles:
-    print("{:40s} {:s}".format(article[0], str("{:,}".format(article[1]).rjust(7))))
+    print("{:40s} {:s}".format(
+        article[0], str("{:,}".format(article[1]).rjust(7))))
 
 # Get author list in order
 
@@ -57,7 +59,8 @@ authors = get_pop_authors()
 print("{:30s} {:s}".format("Author", "Views"))
 print("{:-<30} {:-<7}".format("", ""))
 for author in authors:
-    print("{:30s} {:s}".format(author[0], str("{:,}".format(author[1]).rjust(7))))
+    print("{:30s} {:s}".format(
+        author[0], str("{:,}".format(author[1]).rjust(7))))
 
 # Get the dates for an error rate of greater than 1% of requests
 
