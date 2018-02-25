@@ -1,0 +1,20 @@
+Title                                    Views
+---------------------------------------- -------
+Candidate is jerk, alleges rival         338,647
+Bears love berries, alleges bear         253,801
+Bad things gone, say good people         170,098
+
+
+Author                         Views
+------------------------------ -------
+Ursula La Multa                507,594
+Rudolf von Treppenwitz         423,457
+Anonymous Contributor          170,098
+Markoff Chaney                  84,557
+
+
+Date                           Errors
+------------------------------ ------
+July 17, 2016                  2.3%
+
+
