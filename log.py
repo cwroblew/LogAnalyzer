@@ -73,7 +73,7 @@ def get_1perc_error(c):
     stmt = """
             SELECT totdt, badcnt * 1.0 / logcnt AS errors
             FROM dailylogcnt, badsrch
-            WHERE srchbaddt = totdt 
+            WHERE srchbaddt = totdt
             AND badcnt > logcnt * 0.01
             ORDER BY totdt
     """
@@ -103,7 +103,10 @@ def print_top_authors(c):
 
 
 def print_errors_over_one(c):
-    """Prints out the days where more than 1% of logged access requests were errors."""
+    """
+    Prints out the days where more than 1% of logged access requests
+    were errors.
+    """
     print("\n")
     errors = get_1perc_error(c)
     print("{:30s} {:s}".format("Date", "Errors"))
@@ -113,8 +116,8 @@ def print_errors_over_one(c):
 
 
 if __name__ == '__main__':
-    db, c = db_connect();
+    db, c = db_connect()
     print_top_articles(c)
     print_top_authors(c)
     print_errors_over_one(c)
-    db_close (db)
+    db_close(db)
